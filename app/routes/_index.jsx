@@ -16,32 +16,9 @@ const Index = () => {
     }
   };
 
-  const sendData = async () => {
-    const url = 'http://localhost:3000/createProduct';
-  
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: 'Produto Teste',
-          status: 'active',
-          descriptionHtml: 'Descrição do produto...',
-        }),
-      });
-  
-      const data = await response.json();
-      console.log('Response:', data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
 
   const handleButtonClick = () => {
     fetchData();
-    sendData();
   };
 
   return (
